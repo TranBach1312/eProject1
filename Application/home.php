@@ -7,10 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- include and display Header -->
     <?php include('layout/header.php');?>
     <div class="slideshow-container">
     </div>
-    <main></main>
+    <main>
+        <section></section>
+        <aside>
+
+        </aside>
+    </main>
+    <!-- include and display footer -->
     <?php include('layout/footer.php');?>
 </body>
 </html>

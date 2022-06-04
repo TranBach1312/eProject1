@@ -1,5 +1,5 @@
-<?php
-    echo '<header>
+
+    <header>
     <span class="hotline">Hotline</span>
     <div class="search">
         <form action="">
@@ -43,5 +43,4 @@
             </nav>
         </div>
     </div>
-</header>'
-?>
+</header>
