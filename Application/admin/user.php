@@ -1,5 +1,5 @@
 <?php
-
+    require_once('../utils/utility.php');
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +22,8 @@
             
         </div>
     </main>
-    <footer></footer>
+    <form action="" method="POST">
+        
+    </form>
 </body>
 </html>

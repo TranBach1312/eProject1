@@ -17,5 +17,17 @@ CREATE Table if not EXISTS cars(
     range_id int not null references ranges(range_id),
     car_name varchar(50),
     car_infomation TEXT,
-    price float
-)
+    price float,
+    fuel_type_id varchar(20),
+    gearbox_type_id int 
+);
+
+CREATE table if not exists transmissions(
+    transmission_id int primary key auto_increment,
+    transmission_type varchar(50)
+);
+
+CREATE table if not exists fuels(
+    fuel_id int primary key auto_increment,
+    fuel_type varchar(30)
+);
