@@ -1,4 +1,6 @@
-
+<?php
+    
+?>
     <header>
     <span class="hotline">Hotline</span>
     <div class="search">
@@ -28,7 +30,7 @@
                     <li>
                         <a href="">Brands</a>
                         <div class="sub-menu">
-                            
+                            <a href=""></a>
                         </div>
                     </li>
                     <li>
