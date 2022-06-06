@@ -1,0 +1,16 @@
+@keyframes test{
+    0%{height: 0px;}
+    50%{height: 50px;}
+    100%{height: 100px;}
+}
+
+ul{
+    overflow: hidden;
+    display: none;
+}
+button:focus .a{
+    display: block;
+    animation-name: test;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
