@@ -11,3 +11,7 @@ function getGet($key){
         return $_GET[$key];
     }
 }
+
+function getMD5($value){
+    return md5($value);
+}
