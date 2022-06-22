@@ -1,3 +1,6 @@
+<?php
+    include('getdata.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +26,6 @@
     <!-- include and display Header -->
     <?php include('layout/header.php');?>
     <main>
-        <?php include('layout/brand-detail.php');?>
         <aside>
             
         </aside>

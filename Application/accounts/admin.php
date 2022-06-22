@@ -1,7 +1,7 @@
 <?php
     session_start();
-    if($_SESSION['uid'] != 1){
-        header('Location: ../home.php');
+    if($_SESSION['logged'] != 1 || $_SESSION['uid'] != 1){
+        header('Location: ../index.php');
         die();
     }
 ?>
@@ -22,6 +22,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../style/adm-header-style.css">
     <link rel="stylesheet" href="../style/adm-menu-style.css">
+    <link rel="stylesheet" href="../style/style-create.css">
+    <link rel="stylesheet" href="../style/style-dashboard.css">
+    <link rel="stylesheet" href="../style/style-product.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="../style/style-profile.css"> -->
+    <link rel="stylesheet" href="../style/style-user.css">
 </head>
 <body>
     <?php
@@ -39,15 +45,13 @@
                 $tam='';
             }
             if($tam=='profile'){
-                include('profile.php');
+                include('../layout/profile.php');
             }elseif($tam=='user'){
-                include('user.php');
+                include('../layout/user.php');
             }elseif($tam=='product'){
-                include('product.php');
-            }elseif($tam=='order'){
-                include('order.php');
+                include('../layout/product.php');
             }else{
-                include('dashboard.php');
+                include('../layout/dashboard.php');
             }
             
             ?>

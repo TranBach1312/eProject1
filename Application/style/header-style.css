@@ -161,12 +161,14 @@ header *{
 .sub-menu{
     position: absolute;
     z-index: 2;
-    width: 500%;
+    width: 700px;
     height: 500px;
     top: 82px;
-    transform: translateX(-45%);
+    transform: translateX(-42%);
     background-color: white;
     display: none;
+    box-shadow: 1px 1px 10px 3px rgb(0, 0, 0);
+    padding: 0 20px;
 }
 .sub-menu ul{
     list-style: none;
@@ -176,7 +178,37 @@ header *{
     color: gray;
     display: inline-block;
     vertical-align: auto;
-    width: calc(500px/4);
+    text-align: center;
+    width: calc(100%/3);
     height: 70px;
     line-height: 70px;
+    float: left;
+    transition: 0.3s;
+    position: relative;
+}
+.sub-menu ul li a{
+    z-index: 1;
+    position: static;
+}
+.sub-menu ul li::after{
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    content: "";
+    background-color: #0f59ee;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: all 0.5s;
+}
+.sub-menu ul li:hover::after{
+    width: 100%;
+    left: 0;
+}
+.sub-menu ul li:hover a{
+    color: white;
+}
+.avt{
+    width: 50px;
+    height: 50px;
 }

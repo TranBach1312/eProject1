@@ -1,0 +1,14 @@
+.brand-detail{
+    display: flex;
+    
+}
+.brand-detail img{
+    height: 200px;
+}
+.brand-detail h3{
+    font-size: 300%;
+
+}
+.brand-detail .details{
+
+}

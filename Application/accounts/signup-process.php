@@ -3,8 +3,9 @@
 require_once("../db/dbhelper.php");
 require_once("../utils/utility.php");
 $msg = null;
-if(!isset($_GET['action']) || ($_GET['action'] != 'signup' and $_GET['action'] != 'signin')){
-    header('Location: ../home.php');
+$stop = 0;
+if(!isset($_GET['action']) || ($_GET['action'] != 'signup' and $_GET['action'] != 'signin') || empty($_POST)){
+    header('Location: ../index.php');
     exit;
 }
 elseif($_GET['action'] == 'signup'){
@@ -12,34 +13,39 @@ if(!empty($_POST)){
     $id = getPost('id');
     $username = getPost('username');
     $email = getPost('email');
+    $address = getPost('address');
     $pwd = getMD5(getPost('pwd'));
     $repwd = getMD5(getPost('repwd'));
     $phonenumber = getPost('phonenumber');
+    $seller_register = getPost('seller_register');
+    if(!isset($seller_register)){
+        $seller_register = 0;
+    }
 }
 if(isset($email)){
     $sql_check_signup = "SELECT email from users where email = '$email'";
     $check_signup = db_get_data($sql_check_signup, 1);
     if(($check_signup)){
         $msg = '<p>This Email is already registered</p>';
-        die;
+    $stop = 1;
     }
 }
-if($pwd == $repwd){
-    $sql_signup = "INSERT into `users`(id, email, username, phonenumber, password)
-        values('$id', '$email', '$username','$phonenumber', '$pwd')
+if($pwd == $repwd and $stop == 0){
+    $sql_signup = "INSERT into `users`(id_card, email, user_name, address, phone_number, password, sell_permission)
+        values('$id', '$email', '$username','$address', '$phonenumber', '$pwd', '$seller_register')
     ";
-    db_config($sql_signup);
-    $msg = '<p>Signup Successful</p>';
+    if(db_config($sql_signup)){
+        $msg = '<p>Signup Successful</p>';
+    }
 }
-else{
+elseif($pwd != $repwd and !$stop){
     $msg = '<p>Passwords are not the same!!</p>';
-    exit;
 }}
 elseif($_GET['action'] == 'signin'){
     session_start();
        if(!empty($_POST)){
-          $email = getPost('email');
-          $pwd = getMD5(getPost('pwd'));
+          $email = getPost('email_in');
+          $pwd = getMD5(getPost('pwd_in'));
        }
        if(isset($email)){
         $sql_check_signin = "SELECT id, email, password from `users` where email = '$email'";
@@ -48,8 +54,9 @@ elseif($_GET['action'] == 'signin'){
        if(isset($check_signin)){
             if(($check_signin['password']) == $pwd){
             $_SESSION['uid'] = $check_signin['id'];
+            $_SESSION['logged'] = 1;
             $msg = '<p>Loged Successful</p>';
-            $msg .= "<span>Trở về trang chủ trong ... giây hoặc bấm vào <a href='../home.php'>đây</a>";
+            $msg .= "<span>Trở về trang chủ trong ... giây hoặc bấm vào <a href='../index.php'>đây</a>";
         }
         else{
             $msg = '<p>Password is\'n correct!!</p>';

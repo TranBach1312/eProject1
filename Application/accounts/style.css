@@ -11,18 +11,18 @@ body{
     position: relative;
 }
 .bg{
-   background-image: url('../img/bg/a.jpg');
-   filter: blur(10px);
-   width: 100%;
-   height: 100%;
-   background-size: cover;
-   z-index: 1;
-    background-repeat: no-repeat;
+    background-image: url('https://i.pinimg.com/736x/39/42/64/394264ead42d45e7588f13f6ae0e9ad3.jpg');
+    filter: blur(10px);
+    width: 100%;
+    height: 1000px;
+    background-size: cover;
+    z-index: 1;
     background-position: center;
+    background-attachment: local;
 }
 @keyframes onload {
     0%{left: -500px;}
-    100%{left: 374.5px;}
+    100%{left: 27%}
 }
 .log-wrapper{
     position: absolute;
@@ -62,7 +62,7 @@ body{
 .signin-form, .signup-form {
 	background: transparent;
 	width: 100%;
-    height: 450px;
+    height: fit-content;
     /* display: inline-block; */
 	padding: 20px;
     position: relative;
@@ -123,6 +123,17 @@ body{
 #eye i{
 	padding-right: 0px;
 	cursor: pointer;
+}
+.checkbox{
+    margin-bottom: 10px;
+    align-self: flex-end;
+}
+.checkbox label{
+    font-size: 20px;
+}
+.checkbox input{
+    width: 20px;
+    height: 20px;
 }
 .form-submit{
     background-color: #4db848;

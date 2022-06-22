@@ -10,6 +10,7 @@
         else{
             $conn -> query($sql);
         }  
+        echo mysqli_error($conn). "\n";
         $conn -> close();
     }
 
@@ -31,6 +32,8 @@
                 $data[] = $result;
             }
         }
+        
+        echo mysqli_error($conn). "\n";
         $conn -> close();
         return $data;
     }

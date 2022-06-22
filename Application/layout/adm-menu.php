@@ -8,11 +8,15 @@
             <hr>
             <div id="demo" class="menu-left">
                 <ul>
-                    <li><a href="?admin=dashboard.php"><i class="fas fa-book-open"></i> Dashboard</a></li>
+                    <li><a href="?admin=dashboard.php"><i class="fas fa-book-open"></i>Dashboard</a></li>
                     <li><a href="?admin=profile&id=1>"><i class="fa fa-id-badge" aria-hidden="true"></i> Profile</a></li>
-                    <li><a href="?admin=user&id=2"><i class="fa fa-user-circle" aria-hidden="true"></i> User Management</a></li>
+                    <?php
+                        
+                        if($_SESSION['uid'] == 1){
+                            echo '<li><a href="?admin=user&id=2"><i class="fa fa-user-circle" aria-hidden="true"></i> User Management</a></li>';
+                        }
+                    ?>
                     <li><a href="?admin=product&id=3"><i class="fas fa-dharmachakra"></i>Product Management </a></li>
-                    <li><a href="?admin=order"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Management </a></li>
                 </ul>
             </div>
         </div>

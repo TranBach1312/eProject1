@@ -19,11 +19,11 @@
 	<form name="signin" action="signup-process.php?action=signin" method="POST">
 		<div class="form-group">
 			<i class="far fa-user"></i>
-			<input type="email" name="email" class="form-input" placeholder="Email" required>
+			<input type="email" name="email_in" class="form-input" placeholder="Email" required>
 		</div>
 		<div class="form-group">
 			<i class="fas fa-key"></i>
-			<input type="password" name="pwd" class="form-input" placeholder="Password" required >
+			<input type="password" name="pwd_in" class="form-input" placeholder="Password" required >
 			<div class="eye">
 				<i class="far fa-eye"></i>
 			</div>
@@ -48,6 +48,9 @@
 			<input type="text" name="email" class="form-input" placeholder="Email" required>
 		</div>
 		<div class="form-group">
+			<input type="text" name="address" class="form-input" placeholder="Address" required>
+		</div>
+		<div class="form-group">
 			<input type="password" name="pwd" class="form-input" placeholder="Password" required>
 			<div class="eye">
 				<i class="far fa-eye"></i>
@@ -55,6 +58,13 @@
 		</div>
 		<div class="form-group">
 			<input type="password" name="repwd" class="form-input" placeholder="Password" required>
+			<div class="eye">
+				<i class="far fa-eye"></i>
+			</div>
+		</div>
+		<div class="checkbox">
+			<label for="">Register as a seller</label>
+			<input type="checkbox" name="seller_register" value=1>
 			<div class="eye">
 				<i class="far fa-eye"></i>
 			</div>
