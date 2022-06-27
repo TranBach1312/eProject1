@@ -27,3 +27,9 @@ $(document).ready(function() {
         $("#next").click();
     },5000);
 });
+$(() => {
+    $('p img').click(function() {
+        let imgPath = $(this).attr('src');
+        $('#main-img').attr('src', imgPath);
+    })
+})

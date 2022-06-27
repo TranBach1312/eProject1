@@ -3,7 +3,7 @@ require_once('../utils/utility.php');
 require_once('../db/dbhelper.php');
 if (!empty($_GET)) {
 	session_start();
-	$id = getGet('id');
+	$id = getGet('car_id');
 
 	$sql_check_deler = "SELECT seller_id from cars where id = " . $id;
 	$deler = db_get_data($sql_check_deler, 1);
