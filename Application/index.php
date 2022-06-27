@@ -1,6 +1,9 @@
 <?php
-    include('getdata.php');
-    $sql_select_lastest_car = "SELECT top(9) * from cars order by update_at";
+    require_once('./db/dbhelper.php');
+    require_once('./utils/utility.php');
+    require_once('getdata.php');
+    $sql_select_lastest_cars = "SELECT * from cars order by update_at limit 9";
+    $lastest_cars = db_get_data($sql_select_lastest_cars, 0);
 ?>
 
 <!DOCTYPE html>
@@ -34,39 +37,38 @@
         <div class="lastest">
             <h3>Xe Mới Nhất</h3>
             <div class="row-cars">
-                <div class="car-item">
-                    <img src="https://ssa-api.toyotavn.com.vn//VehicleImgs/64EE95D9245744B846EA5D5A94B20334.png" alt="">
-                    <h3>CAMRY 2.5Q</h3>
-                    <span>Giá 200 tỷ</span>
-                    <div class="info">
-                        <p><i class="fa-solid fa-calendar"></i>2009</p>
-                        <p><i class="fa-solid fa-gear"></i>Số tự động</p>
-                        <p><i class="fa-solid fa-flag-checkered"></i>Nhập khẩu</p>
-                        <p><i class="fa-solid fa-gas-pump"></i>Xăng</p>
-                    </div>
-                </div>
-                <div class="car-item">
-                    <img src="https://hondagiaiphonghn.com/wp-content/uploads/5-9.jpg" alt="">
-                    <h3>HONDA CIVIC</h3>
-                    <span>Giá 700 tỷ</span>
-                    <div class="info">
-                        <p><i class="fa-solid fa-calendar"></i>2009</p>
-                        <p><i class="fa-solid fa-gear"></i>Số tự động</p>
-                        <p><i class="fa-solid fa-flag-checkered"></i>Nhập khẩu</p>
-                        <p><i class="fa-solid fa-gas-pump"></i>Xăng</p>
-                    </div>
-                </div>
-                <div class="car-item">
-                    <img src="https://hondagiaiphonghn.com/wp-content/uploads/download-2.png" alt="">
-                    <h3>HONDA CV-R</h3>
-                    <span>Giá 500 tỷ</span>
-                    <div class="info">
-                        <p><i class="fa-solid fa-calendar"></i>2009</p>
-                        <p><i class="fa-solid fa-gear"></i>Số tự động</p>
-                        <p><i class="fa-solid fa-flag-checkered"></i>Nhập khẩu</p>
-                        <p><i class="fa-solid fa-gas-pump"></i>Xăng</p>
-                    </div>
-                </div>
+                <?php
+                    if($lastest_cars){
+                        foreach($lastest_cars as $lastest_car){
+                        $sql_select_transmission = "SELECT name from transmissions where id = ".$lastest_car['transmission_id'];
+                        $transmission = db_get_data($sql_select_transmission, 1);
+                        $sql_select_fuel = "SELECT name from fuels where id = ".$lastest_car['fuel_id'];
+                        $fuel = db_get_data($sql_select_fuel);
+                        $sql_select_brand = "SELECT name from brands where id = ".$lastest_car['brand_id'];
+                        $brand = db_get_data($sql_select_brand);
+                        $sql_select_img = "SELECT name from imgdetails where car_id = " .$lastest_car['id'] ." LIMIT 1";
+                        $img = db_get_data($sql_select_img, 1);
+                        if($lastest_car['status'] == "0"){
+                            $status = "Pre Owned";
+                        }
+                        else{
+                            $status = "New Car";
+                        }
+
+                        echo '<div class="car-item">
+                        <a href="product-detail.php?id='.$lastest_car['id'].'"><img src="./img/cars/'.$img['name'].'" alt="thumbnail"></a>
+                        <h3>'.$lastest_car['name'].'</h3>
+                        <span>Price: '.$lastest_car['price'].'</span>
+                        <div class="info">
+                            <p><i class="fa-solid fa-calendar"></i>'.$brand['name'].'</p>
+                            <p><i class="fa-solid fa-gear"></i>'.$transmission['name'].'</p>
+                            <p><i class="fa-solid fa-flag-checkered"></i>'.$status.'</p>
+                            <p><i class="fa-solid fa-gas-pump"></i>'.$fuel['name'].'</p>
+                        </div>
+                    </div>';
+                    }}
+                ?>
+                
             </div>
         </div>
     </main>

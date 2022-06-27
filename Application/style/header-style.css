@@ -20,6 +20,7 @@ header *{
     background-size: cover;
     color: antiquewhite;
     padding: 5px 100px;
+    height: 60px;
 }
 .hotline{
     color: white;
@@ -161,8 +162,7 @@ header *{
 .sub-menu{
     position: absolute;
     z-index: 2;
-    width: 700px;
-    height: 500px;
+    width: 500px;
     top: 82px;
     transform: translateX(-42%);
     background-color: white;
@@ -183,32 +183,41 @@ header *{
     height: 70px;
     line-height: 70px;
     float: left;
-    transition: 0.3s;
-    position: relative;
 }
 .sub-menu ul li a{
     z-index: 1;
     position: static;
+    width: fit-content;
+    transition: 0.2s;
+    position: relative;
 }
-.sub-menu ul li::after{
-    height: 100%;
+.sub-menu ul li a::after{
+    height: 2px;
     width: 0%;
     position: absolute;
     content: "";
-    background-color: #0f59ee;
-    top: 0;
+    background-color: #0F58EE;
+    bottom:  0;
     right: 0;
     z-index: -1;
     transition: all 0.5s;
 }
-.sub-menu ul li:hover::after{
+.sub-menu ul li a:hover::after{
     width: 100%;
     left: 0;
 }
-.sub-menu ul li:hover a{
+.account-manager a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+}
+.account-manager a span{
+    font-size: 18px;
     color: white;
 }
 .avt{
     width: 50px;
     height: 50px;
+    border-radius: 50%;
 }

@@ -37,3 +37,13 @@
         $conn -> close();
         return $data;
     }
+    function db_insert_car($sql){
+        $conn = mysqli_connect(HOST, USER, PWD, DATABASE);
+        $conn -> set_charset('utf8');
+            $conn -> query($sql);
+    
+        echo mysqli_error($conn). "\n";
+        $id = mysqli_insert_id($conn);
+        $conn -> close();
+        return $id;
+    }

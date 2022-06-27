@@ -1,10 +1,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h2> Product Management <span><i class="fa fa-home" aria-hidden="true"><a href="#">Home</a></i></span></h2>
-            <span>
-                <h4 id="time"></h4>
-            </span>
+            <h2> Product Management</h2>
             <hr>
         </div>
         <div class="content">
@@ -20,54 +17,36 @@
                 <table>
                     <thead>
                         <tr>
-                            <th><input type="checkbox"></th>
                             <th>Product ID</th>
                             <th>Product Name</th>
                             <th>Image</th>
-                            <th>Amount</th>
                             <th>Status</th>
                             <th>Price</th>
-                            <th>Category</th>
+                            <th>Brand</th>
                             <th colspan="2">Manipulation</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>1</td>
-                            <td>lamborghini</td>
-                            <td><img class="image" src="https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA" alt=""></td>
-                            <td>34</td>
-                            <td>còn hàng</td>
-                            <td>1.000.000$</td>
-                            <td>SỊn</td>
-                            <td class="edit"><a href="">Edit</a></td>
-                            <td class="delete"><a href="">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>1</td>
-                            <td>lamborghini</td>
-                            <td><img class="image" src="https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA" alt=""></td>
-                            <td>34</td>
-                            <td>còn hàng</td>
-                            <td>1.000.000$</td>
-                            <td>SỊn</td>
-                            <td class="edit"><a href="">Edit</a></td>
-                            <td class="delete"><a href="">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>1</td>
-                            <td>lamborghini</td>
-                            <td><img class="image" src="https://vcdn1-dulich.vnecdn.net/2021/07/16/8-1626444967.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=GfgGn4dNuKZexy1BGkAUNA" alt=""></td>
-                            <td>34</td>
-                            <td>còn hàng</td>
-                            <td>1.000.000$</td>
-                            <td>SỊn</td>
-                            <td class="edit"><a href="">Edit</a></td>
-                            <td class="delete"><a href="">Delete</a></td>
-                        </tr>
+                        <?php
+                            foreach($cars as $car){
+                                $sql_select_img = "SELECT name from imgdetails where car_id = " .$car['id'] ." LIMIT 1";
+                                $img = db_get_data($sql_select_img, 1);
+                                $sql_select_brand = "SELECT name from brands where id =". $car['brand_id'];
+                                $brand = db_get_data($sql_select_brand);
+                                echo '<tr>
+                                <td>'.$car['id'].'</td>
+                                <td>'.$car['name'].'</td>
+                                <td><img class="image" src="../img/cars/'.$img['name'].'" alt="Thumbnail"></td>
+                                <td>'.$car['status'].'</td>
+                                <td>'.$car['price'].'$</td>
+                                <td>'.$brand['name'].'</td>
+                                <td class="edit"><a href="edit-product.php?car_id='.$car['id'].'">Edit</a></td>
+                                <td class="delete"><button onclick="delete1('.$car['id'].')">Delete</button></td>
+                            </tr>';
+                            }
+                        ?>
+                        
+                        
                     </tbody>
                 </table>
             </div>
@@ -78,7 +57,12 @@
         var date = today.getMonth() + 1 + '/' + today.getDate() + '/' + today.getFullYear();
         var time = today.getHours() + ":" + today.getMinutes();
         var dateTime = date + ' ' + time;
-        document.getElementById("time").innerHTML = dateTime;
+        document.getElementById("time").innerHTML = "Now: "+ dateTime; 
+        function delete1(id){
+        if(confirm("Are you so sure about that?") == true){
+                window.location.href = "delete-product.php?car_id=" + id;
+        } 
+        }
     </script>
 </body>
 

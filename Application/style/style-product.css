@@ -115,5 +115,9 @@ a:focus{
 .list table thead tr th:nth-child(9){
     width: 150px;
 }
+.delete button{
+    border: none;
+    background-color: transparent;
+}
 
 

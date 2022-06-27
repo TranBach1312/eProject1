@@ -1,6 +1,4 @@
 <?php
-    require_once("./db/dbhelper.php");
-    require_once("./utils/utility.php");
     $sql_select_brands = "SELECT name, id from brands";
     $brands = db_get_data($sql_select_brands, 0);
     $sql_select_ranges = "SELECT name, id from ranges";

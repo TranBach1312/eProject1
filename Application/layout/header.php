@@ -1,6 +1,7 @@
 <?php
 require_once("./db/dbhelper.php");
 require_once("./utils/utility.php");
+require_once('./utils/getuser.php');
 ?>
 <header>
     <!-- <div id="w-top"></div> -->
@@ -12,49 +13,54 @@ require_once("./utils/utility.php");
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
+
+        <div class="account-manager">
+
+            <a href="<?php
+                        if ($_SESSION['uid'] == 1) {
+                            echo './accounts/admin.php';
+                        } else {
+                            echo './accounts/account-setting.php';
+                        }
+                        ?>">
+                        <?php
+                        if(isset($user)){
+                            echo '<img class="avt" src="img/avatar/'. $user['avatar'] .'" alt="avatar"><span>'.$user['user_name'].'</span>';
+                        }
+                        ?>
+        </a>
+
+        </div>
         <div class="account-box">
             <?php
-            session_start();
             if (!isset($_SESSION['uid'])) {
                 echo "<span><a href='./accounts/signup.php'>Sign Up or Sign In</a></span>";
             } else {
                 echo "<span><a href='./accounts/logout.php'>Log Out</a></span>";
             }
+
             ?>
-        </div>
-        <div class="account_manager">
-            
-            <a href="<?php
-                if($_SESSION['uid'] == 1){
-                    echo './accounts/admin.php';
-                }
-                else{
-                    echo './accounts/account-setting.php';
-                }
-            ?>
-            "><img class="avt" src="https://i.pinimg.com/474x/b5/40/28/b54028d976f2ddf4d434d49d4f1b2ac3.jpg" alt=""></a>
-            
         </div>
     </div>
     <div class="menu" id="menuTop">
         <div class="logo">
             <a href=""><img src="https://img1.oto.com.vn/Static/Images/v3/logo-oto.svg" alt=""></a>
-            <p>Kênh thông tin và giao dịch ô tô</p>
+            <p>Car information and transaction channel</p>
         </div>
         <div class="main-menu">
             <div class="menu-item">
                 <a href="index.php">Home</a>
             </div>
             <div class="menu-item">
-                <a href="show.php">Show Room</a>
+                <a href="show-room.php">Show Room</a>
             </div>
             <div class="menu-item">
                 <a href="brands.php">Brands</a>
-                <div class="sub-menu" >
+                <div class="sub-menu">
                     <ul>
                         <?php
                         foreach ($brands as $brand) {
-                            echo '<li><a href="show.php?brand=' . $brand['id'] . '">' . $brand['name'] . '</a></li>';
+                            echo '<li><a href="show-room.php?brand=' . $brand['id'] . '">' . $brand['name'] . '</a></li>';
                         }
                         ?>
                     </ul>
@@ -66,14 +72,14 @@ require_once("./utils/utility.php");
                     <ul>
                         <?php
                         foreach ($ranges as $range) {
-                            echo '<li><a href="show.php?range=' . $range['id'] . '">' . $range['name'] . '</a></li>';
+                            echo '<li><a href="show-room.php?range=' . $range['id'] . '">' . $range['name'] . '</a></li>';
                         }
                         ?>
                     </ul>
                 </div>
             </div>
             <div class="menu-item">
-                <a href="">PreOwned Car</a>
+                <a href="show-room.php?status=0">PreOwned Car</a>
             </div>
             <div class="menu-item">
                 <a href="./about-us.php">About Us</a>

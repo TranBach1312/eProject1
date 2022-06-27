@@ -31,8 +31,8 @@ if(isset($email)){
     }
 }
 if($pwd == $repwd and $stop == 0){
-    $sql_signup = "INSERT into `users`(id_card, email, user_name, address, phone_number, password, sell_permission)
-        values('$id', '$email', '$username','$address', '$phonenumber', '$pwd', '$seller_register')
+    $sql_signup = "INSERT into `users`(id_card, email, user_name, address, phone_number, password, sell_permission, avatar)
+        values('$id', '$email', '$username','$address', '$phonenumber', '$pwd', '$seller_register', 'default.jpg')
     ";
     if(db_config($sql_signup)){
         $msg = '<p>Signup Successful</p>';

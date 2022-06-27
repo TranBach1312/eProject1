@@ -1,34 +1,13 @@
-
 <body>
     <div class="container">
         <div class="header">
-            <h2> User Management <span><i class="fa fa-home" aria-hidden="true"><a href="#">Home</a></i></span></h2>
+            <h2>User Management</h2>
             <hr>
         </div>
-        <div class="decentralization">
-            <div class="header-2">
-                <select name="" id="">
-                    <option value="">Set Role</option>
-                    <option value="Admin">Admin</option>
-                    <option value="Editor">Editor</option>
-                    <option value="User">User</option>
-                </select>
-                <span><input class="filter-1" type="radio" name="filter" >All</span>
-                <span><input class="filter-1" type="radio" name="filter" >Deleted</span><span>
-                    <div class="filter-2">
-                        <select name="" id="">
-                            <option value="#">Filter By Role</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Editor">Editor</option>
-                            <option value="User">User</option>
-                        </select>
-                    </div>
-                </span>
-                <span>
-                    <div class="search">
-                        <input type="text" name="" id="" placeholder="User Name ..."><button>Search</button>
-                    </div>
-                </span>
+        <div class="buttons">
+            <div class="search" style="float: right;">
+                <input type="text" name="" id="" placeholder="User Name ...">
+                <button class="buttons-5">Search</button>
             </div>
         </div>
         <div class="list">
@@ -94,7 +73,7 @@
                         <td>Admin</td>
                         <td class="edit"><a href="">Edit</a></td>
                         <td class="delete"><a href="">Delete</a></td>
-                    </tr>   
+                    </tr>
                 </tbody>
             </table>
         </div>

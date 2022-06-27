@@ -1,9 +1,12 @@
 <?php
+require_once('../db/dbhelper.php');
     session_start();
     if($_SESSION['logged'] != 1 || $_SESSION['uid'] != 1){
-        header('Location: ../index.php');
+        header('Location: account-setting.php');
         die();
     }
+    $sql_select_cars = "SELECT id, name, brand_id, price, status, seller_id from cars order by update_at DESC";
+    $cars = db_get_data($sql_select_cars, 0);
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +31,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="../style/style-profile.css"> -->
     <link rel="stylesheet" href="../style/style-user.css">
+    <script src="../js/toChangeAvt.js"></script>
 </head>
 <body>
     <?php

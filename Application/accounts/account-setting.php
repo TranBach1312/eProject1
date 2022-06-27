@@ -1,9 +1,12 @@
 <?php
+require_once('../db/dbhelper.php');
     session_start();
     if($_SESSION['logged'] != 1){
         header('Location: ../index.php');
         die();
     }
+    $sql_select_cars = "SELECT id, name, brand_id, price, status, seller_id from cars where seller_id = ".$_SESSION['uid']." order by update_at DESC";
+    $cars = db_get_data($sql_select_cars, 0);
 ?>
 
 <!DOCTYPE html>

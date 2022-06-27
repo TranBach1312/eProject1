@@ -1,14 +1,14 @@
-.brand-detail{
+.brand-show{
     display: flex;
     
 }
-.brand-detail img{
+.brand-show img{
     height: 200px;
 }
-.brand-detail h3{
+.brand-show h3{
     font-size: 300%;
 
 }
-.brand-detail .details{
+.brand-show .details{
 
 }
