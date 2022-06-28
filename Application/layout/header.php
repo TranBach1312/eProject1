@@ -17,11 +17,12 @@ require_once('./utils/getuser.php');
         <div class="account-manager">
 
             <a href="<?php
+            if(!empty($_SESSION)){
                         if ($_SESSION['uid'] == 1) {
                             echo './accounts/admin.php';
                         } else {
                             echo './accounts/account-setting.php';
-                        }
+                        }}
                         ?>">
                         <?php
                         if(isset($user)){
@@ -85,7 +86,7 @@ require_once('./utils/getuser.php');
                 <a href="./about-us.php">About Us</a>
             </div>
             <div class="menu-item">
-                <a href="">Contact Us</a>
+                <a href="contact-us.php">Contact Us</a>
             </div>
         </div>
     </div>

@@ -65,11 +65,11 @@
         <label for="">Status</label>
         <select name="status" id="">
             <?php
-            if ($current['status'] == "0") {
+            if ($current['status'] == "\"0\"") {
                 echo '<option value="" >Status</option>
                 <option value="0" selected>PreOwned</option>
                             <option value="1">New</option>';
-            } elseif ($current['status'] == "1") {
+            } elseif ($current['status'] == "\"1\"") {
                 echo '<option value="" >Status</option>
                 <option value="0" >PreOwned</option>
                             <option value="1" selected>New</option>';

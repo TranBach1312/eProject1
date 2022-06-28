@@ -2,37 +2,49 @@
 require_once('./utils/utility.php');
 require_once('./db/dbhelper.php');
 require_once('getdata.php');
-if(!empty($_GET)){
+
+$sql_check_max_page = "SELECT count(id) as max from cars";
+$maxPage = db_get_data($sql_check_max_page, 1);
+$maxPage['max'] = ceil($maxPage['max']/5);
+echo $maxPage['max'];
+$limit = 5;
+$page = getGet('page');
+if (!isset($page) || $page < 0) {
+    $page = 1;
+}
+$index = ($page - 1) * $limit;
+
+if (!empty($_GET)) {
     $current = [];
-$current['brand_id'] = getGet('brand');
-$current['range_id'] = getGet('range');
-$current['transmission_id'] = getGet('transmission');
-$current['fuel_id'] = getGet('fuel');
-$current['status'] = '"'.(getGet('status')).'"';
-$i = 1;
-$sql_select_cars = "SELECT * from cars where ";
-foreach ($current as $item => $value) {
-    if ($value != null and $value != "") {
-        if ($i == 1) {
-            $sql_select_cars .= $item . " = " . $value;
-            $i++;
-        } else {
-            $sql_select_cars .= " and " . $item . " = " . $value;
-            $i++;
+    $current['brand_id'] = getGet('brand');
+    $current['range_id'] = getGet('range');
+    $current['transmission_id'] = getGet('transmission');
+    $current['fuel_id'] = getGet('fuel');
+    $current['status'] = '"' . (getGet('status')) . '"';
+    $i = 1;
+    $sql_select_cars = "SELECT * from cars where ";
+    foreach ($current as $item => $value) {
+        if ($value != null and $value != "" and $value != "\"\"") {
+            if ($i == 1) {
+                $sql_select_cars .= $item . " = " . $value;
+                $i++;
+            } else {
+                $sql_select_cars .= " and " . $item . " = " . $value;
+                $i++;
+            }
         }
     }
-}
+    $sql_select_cars .= " order by update_at DESC limit $index, $limit";
+    if ($i == 1) {
+        $sql_select_cars .= 1;
+    }
+    // echo $sql_select_cars;
 
-if($i == 1){
-    $sql_select_cars .= 1;
-}
-echo $sql_select_cars;
-
-$cars = db_get_data($sql_select_cars, 0);
-}
-else{
-    $sql_select_cars = "SELECT * from cars order by update_at DESC";
     $cars = db_get_data($sql_select_cars, 0);
+} else {
+    $sql_select_cars = "SELECT * from cars ";
+    $cars = db_get_data($sql_select_cars, 0);
+    echo $sql_select_cars;
 }
 ?>
 
@@ -128,6 +140,17 @@ else{
             }
             ?>
 
+        </div>
+        <div class="page-changer">
+            <ul>
+                <thead>
+                    <?php
+                        for($i = 1; $i <= $maxPage; $i++){
+                            
+                        }
+                    ?>
+                </thead>
+            </ul>
         </div>
     </main>
     <!-- include and display footer -->
