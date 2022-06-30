@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `eproject1`
 --
-drop database if exists eproject1`;
-create table if not exists eproject1`;
+drop database if exists `eproject1`;
+create database if not exists `eproject1`;
 use eproject1`;
 
 -- --------------------------------------------------------
