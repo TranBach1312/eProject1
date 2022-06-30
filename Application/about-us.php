@@ -1,3 +1,10 @@
+<?php
+    
+require_once('./utils/utility.php');
+require_once('./db/dbhelper.php');
+require_once('getdata.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -5,25 +5,25 @@
        <div class="f-container">
            <div class="f-main">
                 <div class="f-main-item">
-                    <h3>Hỗ trợ khách hàng</h3>
-                    <p>Quy định,chính sách</p>
-                    <p>Điều khoản hoạt động salon</p>
-                    <p>Câu hỏi thường gặp</p>
-                    <p>Liên hệ</p>
+                    <h3>Customer support</h3>
+                    <p>Regulations and policies</p>
+                    <p>Terms of Operation</p>
+                    <p>Frequently asked questions</p>
+                    <p>Contact</p>
                 </div>
                 <div class="f-main-item">
-                        <h3>Về chúng tôi</h3>
-                        <p>Giới thiệu</p>
-                        <p>Quy chế hoạt động</p>
-                        <p>Tuyển dụng</p>
+                        <h3>About us</h3>
+                        <p>Introduce</p>
+                        <p>Operational Regulations</p>
+                        <p>Recruit</p>
                         <p>Sitemap</p>
                 </div>
                 <div class="f-main-item">
-                        <h3>Tin tức bán xe hơi</h3>
-                        <p>Báo giá dịch vụ</p>
-                        <p>Khuyển mại từ các hãng</p>
-                        <p>Học viện ô tô</p>
-                        <p>Tác giả</p>
+                        <h3>Car sales news</h3>
+                        <p>Service Quotation</p>
+                        <p>Promotions from companies</p>
+                        <p>Automotive Academy</p>
+                        <p>Author</p>
                 </div>
                 <div class="f-main-item">
                         <p>
@@ -53,23 +53,25 @@
            </div>
            <div class="f-bottom">
            <div class="content_left">
-                <h3>Địa chỉ trụ sở chính</h3>
-                <p>Tầng 2/3,54 Lê Thanh Nghị,Bách Khoa,Hai Bà Trưng,Hà Nội</p>
+                <h3>Headquarters address</h3>
+                <p>Floor 2/3, 54 Le Thanh Nghi, Bach Khoa, Hai Ba Trung, Hanoi</p>
                 <p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
                     </svg>
-                    038.566.9003
+                    0962495730
                 </p>
                 <p>
-                    copyright &copy;by Tran Xuan Bach. <a href="bach.tx.1978@aptechlearning.edu.vn">bach.tx.1978@aptechlearning.edu.vn</a>
+                    copyright &copy;by Tran Xuan Bach. <a href="mailto:bach.tx.1978@aptechlearning.edu.vn" style="color: white;">bach.tx.1978@aptechlearning.edu.vn</a>
                 </p>
             </div>
             <div class="content_right">
-                <h3>Chịu trách nghiệm nội dung : TRẦN XUÂN BÁCH</h3>
-                <p>Giấy chứng nhận ĐKDN số 0106774081 cấp bởi Phòng ĐKKD Hà Nội ngày 11/02/2015</p>
-                <p>Giấy phép ICP số 978/GP-TTĐT do Sở Thông tin và Truyền thông Hà Nội cấp ngày 14/4/2015</p>
-                <p>Giấy phép sửa đổi, bổ sung Giấy phép ICP Số 4362/GP-TTĐT do Sở Thông tin và Truyền thông Hà Nội cấp ngày 20/10/2017</p>
+                <h3>Responsible for the content: Team-2</h3>
+                <p>Leader: Bach Tran Xuan</p>
+                <p>Member: Tho Tran Duc</p>
+                <p>Member: Hieu Nguyen Duy</p>
+                <p>Member: Anh Tang Ba Tuan</p>
+                <p>Member: Giang Nguyen Thi Huong</p>
             </div>
             </div>
        </div>

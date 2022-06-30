@@ -1,5 +1,5 @@
 <?php
-    $sql_select_brands = "SELECT name, id from brands";
+    $sql_select_brands = "SELECT name, id, logo from brands";
     $brands = db_get_data($sql_select_brands, 0);
     $sql_select_ranges = "SELECT name, id from ranges";
     $ranges = db_get_data($sql_select_ranges, 0);

@@ -1,9 +1,8 @@
 <?php
 
-if (isset($_SESSION['uid'])) {
-    $sql_select_user = "SELECT id, user_name, avatar from users where id = " . $_SESSION['uid'];
-    $user = db_get_data($sql_select_user);
-}
+
+// var_dump($user);
+
 ?>
 
 <div class="container">
@@ -23,16 +22,19 @@ if (isset($_SESSION['uid'])) {
             <hr>
             <div id="demo" class="menu-left">
                 <ul>
-                    <li><a href="?admin=dashboard.php"><i class="fas fa-book-open"></i>Dashboard</a></li>
-                    <li><a href="?admin=profile&id=1>"><i class="fa fa-id-badge" aria-hidden="true"></i> Profile</a></li>
+                    <li><a href="?admin=brand.php"><i class="fas fa-book-open"></i>Brand</a></li>
+                    <li><a href="?admin=profile"><i class="fa fa-id-badge" aria-hidden="true"></i> Profile</a></li>
                     <?php
 
                     if ($_SESSION['uid'] == 1) {
-                        echo '<li><a href="?admin=user&id=2"><i class="fa fa-user-circle" aria-hidden="true"></i> User Management</a></li>';
+                        echo '<li><a href="?admin=user"><i class="fa fa-user-circle" aria-hidden="true"></i> User Management</a></li>';
                     }
+                    
+                    
+                    if( $user['sell_permission'] == "1")
+                    echo'<li><a href="?admin=product"><i class="fas fa-dharmachakra"></i>Product Management </a></li>';
                     ?>
-                    <li><a href="?admin=product&id=3"><i class="fas fa-dharmachakra"></i>Product Management </a></li>
-                </ul>
+                    </ul>
             </div>
         </div>
         

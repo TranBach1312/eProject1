@@ -28,7 +28,7 @@ $(document).ready(function() {
     },5000);
 });
 $(() => {
-    $('p img').click(function() {
+    $('.slide-botton p img').click(function() {
         let imgPath = $(this).attr('src');
         $('#main-img').attr('src', imgPath);
     })

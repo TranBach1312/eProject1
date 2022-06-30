@@ -1,12 +1,10 @@
 <?php
 require_once('../db/dbhelper.php');
-    session_start();
-    if($_SESSION['logged'] != 1 || $_SESSION['uid'] != 1){
+require_once('../utils/getuser.php');
+if($_SESSION['logged'] != 1 || $_SESSION['uid'] != 1){
         header('Location: account-setting.php');
         die();
     }
-    $sql_select_cars = "SELECT id, name, brand_id, price, status, seller_id from cars order by update_at DESC";
-    $cars = db_get_data($sql_select_cars, 0);
 ?>
 
 <!DOCTYPE html>
@@ -46,16 +44,16 @@ require_once('../db/dbhelper.php');
             if(isset($_GET['admin'])){
                 $tam=$_GET['admin'];
             }else{
-                $tam='';
+                $tam='profile';
             }
             if($tam=='profile'){
                 include('../layout/profile.php');
-            }elseif($tam=='user'){
+            }elseif($tam=='user' and $_SESSION['uid'] == 1){
                 include('../layout/user.php');
             }elseif($tam=='product'){
                 include('../layout/product.php');
             }else{
-                include('../layout/dashboard.php');
+                include('../layout/brand.php');
             }
             
             ?>

@@ -1,6 +1,6 @@
 <?php
 require_once('../db/dbhelper.php');
-    session_start();
+require_once('../utils/getuser.php');
     if($_SESSION['logged'] != 1){
         header('Location: ../index.php');
         die();
@@ -25,7 +25,7 @@ require_once('../db/dbhelper.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../style/adm-header-style.css">
     <link rel="stylesheet" href="../style/adm-menu-style.css">
-    <link rel="stylesheet" href="../style/style-create.css">
+    <!-- <link rel="stylesheet" href="../style/style-create.css"> -->
     <link rel="stylesheet" href="../style/style-dashboard.css">
     <link rel="stylesheet" href="../style/style-product.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -45,21 +45,24 @@ require_once('../db/dbhelper.php');
             if(isset($_GET['admin'])){
                 $tam=$_GET['admin'];
             }else{
-                $tam='';
+                $tam='profile';
             }
             if($tam=='profile'){
                 include('../layout/profile.php');
             }elseif($tam=='user'){
                 include('../layout/user.php');
-            }elseif($tam=='product'){
+                
+            }elseif($tam=='product' ){
                 include('../layout/product.php');
             }else{
-                include('../layout/dashboard.php');
+                include('../layout/brand.php');
             }
             
             ?>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        
+    </footer>
 </body>
 </html>

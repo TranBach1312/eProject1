@@ -1,6 +1,7 @@
 <?php
 require_once('./utils/utility.php');
 require_once('./db/dbhelper.php');
+date_default_timezone_set("America/New_York");
 session_start();
 if (!empty($_POST)) {
   $car_name = getPost('p-name');
@@ -10,7 +11,7 @@ if (!empty($_POST)) {
   $fuel_id = getPost('fuel');
   $status = getPost('status');
   $price = getPost('price');
-  $description = (getPost('description'));
+  $description = str_replace("'", "\'", getPost('description'));
   $sql_insert_car = "INSERT into cars(name, brand_id, range_id, transmission_id, description, fuel_id, price, status, update_at, seller_id)
                     value('$car_name', '$brand_id', '$range_id', '$transmission_id', '$description', '$fuel_id', '$price', '$status', '" . date('y-m-d h-i-s') . "', '" . $_SESSION['uid'] . "');";
 

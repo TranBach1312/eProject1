@@ -1,6 +1,6 @@
 <?php
-require_once("./db/dbhelper.php");
-require_once("./utils/utility.php");
+// require_once("./db/dbhelper.php");
+// require_once("./utils/utility.php");
 require_once('./utils/getuser.php');
 ?>
 <header>
@@ -56,24 +56,24 @@ require_once('./utils/getuser.php');
                 <a href="show-room.php">Show Room</a>
             </div>
             <div class="menu-item">
-                <a href="brands.php">Brands</a>
+                <p>Brands</p> 
                 <div class="sub-menu">
                     <ul>
                         <?php
                         foreach ($brands as $brand) {
-                            echo '<li><a href="show-room.php?brand=' . $brand['id'] . '">' . $brand['name'] . '</a></li>';
+                            echo '<li><img src="./img/logo/'.$brand['logo'].'"><a href="show-room.php?brand=' . $brand['id'] . '">' . $brand['name'] . '</a></li>';
                         }
                         ?>
                     </ul>
                 </div>
             </div>
             <div class="menu-item">
-                <a href="">Range of car</a>
-                <div class="sub-menu">
+            <p>Range of car</p>
+                <div class="sub-menu ranges">
                     <ul>
                         <?php
                         foreach ($ranges as $range) {
-                            echo '<li><a href="show-room.php?range=' . $range['id'] . '">' . $range['name'] . '</a></li>';
+                            echo '<li class"range"><a href="show-room.php?range=' . $range['id'] . '">' . $range['name'] . '</a></li>';
                         }
                         ?>
                     </ul>

@@ -26,12 +26,13 @@ li{
 .row-left{
     width: 20%;
     background-color:blanchedalmond;
-    position: absolute;
+    /* position: absolute; */
     box-sizing: border-box;
     border-radius: 10px;
     float: left;
     height: 100%;
     box-shadow: 1px 1px 10px 2px black;
+    position: fixed;
 }
 .row-right{
     width:78%;  

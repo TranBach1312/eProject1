@@ -118,7 +118,7 @@ header *{
     z-index: 5;
     position: relative;
 }
-.main-menu .menu-item a{
+.main-menu .menu-item a, .main-menu .menu-item p{
     text-decoration: none;
     color: rgba(0, 0, 0, 0.684);
     font-weight: 550;
@@ -162,13 +162,18 @@ header *{
 .sub-menu{
     position: absolute;
     z-index: 2;
-    width: 500px;
+    width: 650px;
     top: 82px;
     transform: translateX(-42%);
     background-color: white;
     display: none;
     box-shadow: 1px 1px 10px 3px rgb(0, 0, 0);
-    padding: 0 20px;
+    padding: 5px 20px;
+    border-radius: 0 0 10px 10px;
+}
+.ranges ul li{
+    /* display: flex; */
+    justify-content: center;
 }
 .sub-menu ul{
     list-style: none;
@@ -176,20 +181,27 @@ header *{
 }
 .sub-menu ul li {
     color: gray;
-    display: inline-block;
-    vertical-align: auto;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* vertical-align: auto; */
     text-align: center;
     width: calc(100%/3);
     height: 70px;
-    line-height: 70px;
+    /* line-height: 70px; */
     float: left;
+}
+.sub-menu ul li img{
+    width: 50px;
+    height: 50px;
 }
 .sub-menu ul li a{
     z-index: 1;
-    position: static;
+    /* position: static; */
     width: fit-content;
     transition: 0.2s;
     position: relative;
+    text-align: center;
 }
 .sub-menu ul li a::after{
     height: 2px;
