@@ -24,19 +24,17 @@ require_once('../utils/p-title.php');
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../style/adm-header-style.css">
+    <!-- <link rel="stylesheet" href="../style/adm-header-style.css"> -->
     <link rel="stylesheet" href="../style/adm-menu-style.css">
     <!-- <link rel="stylesheet" href="../style/style-create.css"> -->
-    <link rel="stylesheet" href="../style/style-dashboard.css">
+    <!-- <link rel="stylesheet" href="../style/style-dashboard.css"> -->
     <link rel="stylesheet" href="../style/style-product.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="../style/style-profile.css"> -->
     <link rel="stylesheet" href="../style/style-user.css">
+    <script src="../js/toChangeAvt.js"></script>
 </head>
 <body>
-    <?php
-    include('../layout/adm-header.php');
-    ?> 
     <main>
         <?php
         include("../layout/adm-menu.php");

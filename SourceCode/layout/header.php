@@ -45,7 +45,7 @@ require_once('./utils/getuser.php');
     </div>
     <div class="menu" id="menuTop">
         <div class="logo">
-            <a href=""><img src="https://img1.oto.com.vn/Static/Images/v3/logo-oto.svg" alt=""></a>
+            <a href="index.php"><img src="https://img1.oto.com.vn/Static/Images/v3/logo-oto.svg" alt=""></a>
             <p>Car information and transaction channel</p>
         </div>
         <div class="main-menu">

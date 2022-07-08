@@ -26,15 +26,15 @@ if (empty($_POST) || !isset($_SESSION['uid'])) {
         <form action="change-pwd-process.php" method="POST">
         <div class="form-group">
             <label>Old Password</label>
-            <input type="text" class="form-control" name="o-p" required>
+            <input type="password" class="form-control" name="o-p" required>
         </div>
         <div class="form-group">
             <label>New Password</label>
-            <input type="text" class="form-control" name="n-p" required>
+            <input type="password" minlength="8" class="form-control" name="n-p" required>
         </div>
         <div class="form-group">
             <label>Re-Enter New Password</label>
-            <input type="text" class="form-control" name="r-n-p" required>
+            <input type="password" minlength="8" class="form-control" name="r-n-p" required>
         </div>
         <div class="form-group">
             <button class="btn btn-success" name="upload" value="1">Save</button>

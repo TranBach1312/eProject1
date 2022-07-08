@@ -9,7 +9,7 @@ require_once('../utils/p-title.php');
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?=PAGE_TITLE?></title>
+	<title><?= PAGE_TITLE ?></title>
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="../style/sign.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -17,14 +17,14 @@ require_once('../utils/p-title.php');
 </head>
 
 <body>
+	<div class="return-home">
+		<button onclick="window.location.href = '../index.php'">Back to Home</button>
+	</div>
 	<div class="bg">
 
 	</div>
 	<div class="log-wrapper">
 
-		<div class="return-home">
-			<button onclick="history.go(-1)">Return</button>
-		</div>
 		<ul class="h-tab">
 			<li id="signin-btn" class="active">Sign In</li>
 			<li>|</li>
@@ -33,14 +33,16 @@ require_once('../utils/p-title.php');
 		<div class="signin-form">
 			<form name="signin" action="sign-process.php?action=signin" method="POST">
 				<div class="form-group">
-					<i class="far fa-user"></i>
+					<label for="">Email</label>
 					<input type="email" name="email_in" class="form-input" placeholder="Email" required required autocomplete="off">
 				</div>
 				<div class="form-group">
-					<i class="fas fa-key"></i>
-					<input type="password" name="pwd_in" class="form-input" placeholder="Password" required required autocomplete="off">
-					<div class="eye">
-						<i class="far fa-eye"></i>
+					<label for="">Password</label>
+					<div class="main-input">
+						<input type="password" name="pwd_in" class="form-input" placeholder="Password" required required autocomplete="off">
+						<div class="eye">
+							<i class="far fa-eye"></i>
+						</div>
 					</div>
 				</div>
 
@@ -51,35 +53,46 @@ require_once('../utils/p-title.php');
 		<div class="signup-form">
 			<form name="signup" action="sign-process.php?action=signup" method="POST">
 				<div class="form-group">
+					<label for="">Identity Card</label>
 					<input type="text" name="id" class="form-input" placeholder="Identity Card" required autocomplete="off">
 				</div>
 				<div class="form-group">
+					<label for="">User Name</label>
 					<input type="text" name="username" class="form-input" placeholder="User Name" required required autocomplete="off">
 				</div>
 				<div class="form-group">
+					<label for="">Phone</label>
 					<input type="text" name="phonenumber" class="form-input" placeholder="Phone Number" required required autocomplete="off">
 				</div>
 				<div class="form-group">
+					<label for="">Email</label>
 					<input type="text" name="email" class="form-input" placeholder="Email" required required autocomplete="off">
 				</div>
 				<div class="form-group">
+					<label for="">Address</label>
 					<input type="text" name="address" class="form-input" placeholder="Address" required required autocomplete="off">
 				</div>
 				<div class="form-group">
-					<input type="password" name="pwd" class="form-input" placeholder="Password" required minlength="8" required autocomplete="off">
-					<div class="eye">
-						<i class="far fa-eye"></i>
+					<label for="">Password</label>
+					<div class="main-input">
+						<input type="password" name="pwd" class="form-input" placeholder="Password" required minlength="8" required autocomplete="off">
+						<div class="eye">
+							<i class="far fa-eye"></i>
+						</div>
 					</div>
 				</div>
 				<div class="form-group">
-					<input type="password" name="repwd" class="form-input" placeholder="Password" required required autocomplete="off">
-					<div class="eye">
-						<i class="far fa-eye"></i>
+					<label for="">Confirm Password</label>
+					<div class="main-input">
+						<input type="password" name="repwd" class="form-input" placeholder="Password" required required autocomplete="off">
+						<div class="eye">
+							<i class="far fa-eye"></i>
+						</div>
 					</div>
 				</div>
 				<div class="checkbox">
-					<label for="">Register as a seller</label>
 					<input type="checkbox" name="seller_register" value=1>
+					<label for="">Register as a seller</label>
 				</div>
 
 				<button class="form-submit">Sign Up</button>

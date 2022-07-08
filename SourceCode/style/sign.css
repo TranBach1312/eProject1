@@ -1,184 +1,105 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body, html{
+
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 657px;
     width: 100%;
+}
+
+.return-home {
     height: 100%;
-}
-body{
-    position: relative;
-}
-.bg{
-    background: linear-gradient(to bottom, rgb(14, 14, 14), rgb(41, 41, 41), rgb(45, 45, 45));
-    filter: blur(10px);
-    width: 100%;
-	height: 1000px;
-    background-size: cover;
-    z-index: 1;
-    background-position: center;
-    background-attachment: local;
-}
-@keyframes onload {
-    0%{left: -500px;}
-    100%{left: 27%}
-}
-.return-home{
-	position: absolute;
-	top: 20px;
-	left: 20px;
-}
-.return-home button{
-	
-	padding: 5px 10px;
-	background-color: transparent;
-	color: white;
-	border-radius: 10px;
-	font-size: 20px;
-	transition: all 0.5s;
-}
-.return-home button:hover{
-	cursor: pointer;
-	text-decoration: underline solid #e84393;
-}
-.log-wrapper{
-    position: absolute;
-    top: 0;
-    animation-name: onload;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
-    padding: 50px;
-    justify-content: space-evenly;
-    align-self: center;
-    border: 1px solid gray;
-    border-radius: 10px;
-    overflow: hidden;
-    background-size: cover;
-    color: #e84393;
-	background:linear-gradient(to bottom, rgba(0, 0, 0, 0.238), rgba(70, 70, 70, 0.375), rgba(76, 76, 76, 0.318)), url('../img/bg/sign-bg.jpg');
+    justify-content: center;
+    width: 10%;
 }
-.h-tab{
-    display: flex;
-    list-style: none;
+
+.return-home button {
     width: 100%;
-    justify-content: space-around;
-    align-content: center;
-	border-bottom: 10px;
-    /* height: 20%; */
+    height: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: gray;
+    background: rgba(128, 128, 128, 0.5);
+    transition: all 0.5s;
 }
-.h-tab li{
-    text-align: center;
-    font-size: 30px;
-    padding: 30px;
-	text-transform: uppercase;
-	font-weight: 700;
+.return-home button:hover{
+    background: rgba(128, 128, 128);
+    color: white;
 }
-.signin-form, .signup-form {
-	background: transparent;
-	width: 100%;
-    height: fit-content;
-    /* display: inline-block; */
-	padding: 50px 20px;
-    position: relative;
-	/* box-shadow: 0px 0px 17px 2px rgba(255, 255, 255, 0.8); */
-    vertical-align: top;
+.bg {
+    background: url('https://i.pinimg.com/736x/39/42/64/394264ead42d45e7588f13f6ae0e9ad3.jpg') no-repeat center center;
+    width: 45%;
+    height: 100%;
 }
-.signin-form form, .signup-form form{
+
+.log-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* padding: 10px; */
+    width: 45%;
+    align-items: center;
 }
-.signup-form{
+
+.h-tab {
+    display: flex;
+    list-style: none;
+}
+
+.h-tab li {
+    font-size: 30px;
+}
+
+.signup-form {}
+
+.signup-form {
     display: none;
 }
 
-.form-heading {
-	font-size: 25px;
-	text-align: center;
-}
-.form-group{
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
     position: relative;
-	display: flex;
-	align-items: center;
 }
-.form-group:not(:last-child){
-	margin-bottom: 30px;
-	display: flex;
+
+.form-group label {
+    color: rgb(81, 81, 81);
 }
-.form-group i {
-	font-size: 20px;
-	padding-right: 10px;
+
+.form-group input {
+    height: 40px;
+    width: 480px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
 }
-.form-group::after{
-    content: "";
+
+.form-submit {
     width: 100%;
-    height: 3px;
-    background-color: #e84393;
-	border-radius: 10px;
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-}
-.form-input {
-	background: transparent;
-	border: 0px;
-	outline: 0px;
-	flex-grow: 1;
-	font-size: 25px;
-	height: 40px;
-    color: #e84393;
-	padding: 5px;
-}
-.form-input::placeholder{
-	font-size: 20px;
-    color: #e84393;
-}
-#eye i{
-	padding-right: 0px;
-	cursor: pointer;
-}
-.checkbox{
-    margin-bottom: 10px;
-    align-self: flex-end;
-}
-.checkbox label{
-    font-size: 20px;
-}
-.checkbox input{
-    width: 20px;
-    height: 20px;
-}
-.form-submit{
-    background-color: #e84393;
-    width: 170px;
-    padding: 20px 10px;
-    border-radius: 50px;
-	text-transform: uppercase;
-    align-self: center;
-	transition: 0.25s ease-in-out;
+    height: 40px;
+    background-color: rgb(19, 94, 172);
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    font-weight: 700;
-    font-size: 15px;
-	transition: all 0.5s;
+    margin-top: 20px;
 }
-.form-submit:hover{
-	
-	text-decoration: underline solid white 3px;
-}
-.active{
+
+.active {
     position: relative;
-	font-size: 35px;
+    font-size: 35px;
 }
-.active::after{
+
+.active::after {
     content: "";
     width: 100%;
     height: 3px;
@@ -186,13 +107,35 @@ body{
     position: absolute;
     bottom: 0;
     left: 0;
+    border-radius: 10px;
     animation-name: a;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
-	
+
 }
 
-@keyframes a{
-    0%{width: 0%;}
-    100%{width: 100%;}
+@keyframes a {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+.main-input{
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.main-input input{
+    width: 90%;
+    border: none;
+}
+.main-input .eye{
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

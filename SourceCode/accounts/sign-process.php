@@ -26,7 +26,7 @@ if(isset($email)){
     $sql_check_signup = "SELECT email from users where email = '$email'";
     $check_signup = db_get_data($sql_check_signup, 1);
     if(($check_signup)){
-        $msg = '<p>This Email is already registered</p>';
+        $msg = '<p>This Email is already registered</p><br>';
         $msg .= "<span><button onclick='history.go(-1)'>Click Here</a> to return."; 
     $stop = 1;
     }
@@ -36,12 +36,12 @@ if($pwd == $repwd and $stop == 0){
         values('$id', '$email', '$username','$address', '$phonenumber', '$pwd', '$seller_register', 'default.jpg')
     ";
     db_config($sql_signup);
-    $msg = '<p>Signup Successful</p>';
-            $msg .= "<span><a href='../index.php'>Click Here</a> to return to Home Page";    
+    $msg = '<p>Signup Successful </p> <br>';
+            $msg .= "<span><a href='sign.php'>Login</a> or <a href='../index.php'>Click Here</a> to return to Home Page";    
     
 }
 elseif($pwd != $repwd and !$stop){
-    $msg = '<p>Passwords are not the same!!</p>';
+    $msg = '<p>Passwords are not the same!!</p><br>';
     $msg .= "<span><button onclick='history.go(-1)'>Click Here</a> to return."; 
 }}
 elseif($_GET['action'] == 'signin'){
@@ -58,16 +58,17 @@ elseif($_GET['action'] == 'signin'){
             if(($check_signin['password']) == $pwd){
             $_SESSION['uid'] = $check_signin['id'];
             $_SESSION['logged'] = 1;
-            $msg = '<p>Loged Successful</p>';
+            $msg = '<p>Loged Successful</p><br>';
             $msg .= "<span><a href='../index.php'>Click Here</a> to return to Home Page";
         }
         else{
-            $msg = '<p>Password is\'n correct!!</p>';
+            $msg = '<p>Password is\'n correct!!</p><br>';
             $msg .= "<span><button onclick='history.go(-1)'>Click Here</a> to return."; 
         }
        }
        else{
-           $msg = '<p>This email is not registered</p>';
+           $msg = '<p>This email is not registered</p><br>';
+           $msg .= "<span><button onclick='history.go(-1)'>Click Here</a> to return."; 
        }}
 ?>
 <!DOCTYPE html>

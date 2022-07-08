@@ -4,7 +4,7 @@ require_once('../utils/utility.php');
 require_once('../getdata.php');
 require_once('../utils/p-title.php');
 session_start();
-if($_SESSION['uid'] != 1){
+if($_SESSION['logged'] != 1){
     header("Location: index.php");
 }
 ?>
